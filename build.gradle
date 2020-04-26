@@ -90,8 +90,11 @@ dependencies {
     runtime "org.postgresql:postgresql:42.2.0"
 
     // For the testcontainers-spring-boot dependencies:
-    testCompile 'org.springframework.cloud:spring-cloud-starter:2.1.5.RELEASE'
-    testCompile 'com.playtika.testcontainers:embedded-postgresql:1.48'
+//    testCompile 'org.springframework.cloud:spring-cloud-starter:2.1.5.RELEASE'
+//    testCompile 'com.playtika.testcontainers:embedded-postgresql:1.48'
+    testCompile "org.testcontainers:postgresql:1.14.1"
+    testCompile "org.testcontainers:spock:1.14.1"
+
 
 }
 

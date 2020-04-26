@@ -111,15 +111,18 @@ environments:
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
-            dbCreate: update
+            dbCreate: create
             # This line is the default. The next few lines are what need to be used
 #            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-
-            # These lines must be uncommented
-            url: "jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/test_db"
-            username: "${embedded.postgresql.user}"
-            password: "${embedded.postgresql.password}"
+            url: "jdbc:postgresql://localhost:5432/test"
+            username: "test"
+            password: "test"
             driverClassName: org.postgresql.Driver
+            # These lines must be uncommented for testcontainers spring boot
+#            url: "jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/test_db"
+#            username: "${embedded.postgresql.user}"
+#            password: "${embedded.postgresql.password}"
+#            driverClassName: org.postgresql.Driver
 
     # This is works if testcontainers-plugin for springboot exposes sys props
 #           url: jdbc:postgresql://${EMBEDDED_POSTGRESQL_HOST}:${EMBEDDED_POSTGRESQL_PORT}/test_db
