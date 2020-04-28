@@ -11,7 +11,7 @@ class WorldSpec extends Specification {
     def 'greet the world' () {
 
         when:
-        World world = new World(greeting: "hello world").save()
+        World world = new World(greeting: "hello world").save(flush: true)
 
         then:
         World.count == old(World.count) + 1
