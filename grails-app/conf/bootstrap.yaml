@@ -1,3 +1,0 @@
-embedded.postgresql:
-  enabled: 'true'
-  dockerImage: 'postgres:9.6.16-alpine'

@@ -47,6 +47,7 @@ configurations.all {
 
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+    developmentOnly "io.methvin:directory-watcher:0.4.0"
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
@@ -85,14 +86,14 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.14.0"
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
 
-
     // The following is NON-HELLO-WORLD dependencies:
     runtime "org.postgresql:postgresql:42.2.0"
 
-    // For the testcontainers-spring-boot dependencies:
-    testCompile 'org.springframework.cloud:spring-cloud-starter:2.1.5.RELEASE'
-    testCompile 'com.playtika.testcontainers:embedded-postgresql:1.48'
+    testCompile "org.testcontainers:postgresql:1.14.1"
+    testCompile "org.testcontainers:spock:1.14.1"
 
+    // for dev mode:
+    developmentOnly "org.testcontainers:postgresql:1.14.1"
 }
 
 bootRun {
